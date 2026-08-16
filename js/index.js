@@ -5,7 +5,11 @@
 //    URL: http://localhost:3000/api/user  (iniciar antes con npm start)
 // 2. Al recibir la respuesta, convertirla a JSON con response.json().
 // 3. Invocar renderizarDatosUsuario() pasándole el objeto JSON completo.
-
+fetch('http://localhost:3000/api/user')
+  .then((response) => response.json())
+  .then((datos) => {
+    renderizarDatosUsuario(datos);
+  });
 // 4. Desarrollar renderizarDatosUsuario(datos):
 //    - Obtener el usuario desde datos.results[0].
 //    - Seleccionar el contenedor con document.querySelector('.tarjeta').
