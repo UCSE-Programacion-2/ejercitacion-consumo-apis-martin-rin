@@ -43,4 +43,10 @@ function renderizarDatosUsuario(datos) {
 
 function cargarUsuario() {
   // Escribe aquí tu código para realizar un nuevo pedido a la API y actualizar la tarjeta
+
+  fetch('http://localhost:3000/api/user')
+    .then((response) => response.json())
+    .then((datos) => {
+      renderizarDatosUsuario(datos);
+    });
 }
